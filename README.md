@@ -83,5 +83,29 @@ This runs bundle install again. Running the build again still runs bundle instal
 
 THIS IS NOT WORKING!
 
+## Write Code
 
+```
+docker run -it --rm -v ${PWD}:/usr/src/app my-app rails g scaffold Post title body:text
+```
+
+## Run Database Migration
+
+```
+docker run -it --rm -v ${PWD}:/usr/src/app my-app rails db:migrate
+```
+
+## Run the App
+
+```
+docker run --rm -it -p 3000:3000 -v ${PWD}:/usr/src/app my-app
+```
+
+## Persisting the Records
+
+Create some records. Stop the server. Start the server:
+
+```
+docker run --rm -it -p 3000:3000 -v ${PWD}:/usr/src/app my-app
+```
 
